@@ -1,0 +1,65 @@
+[tool.poetry]
+name = "data-science"
+version = "0.1.0"
+description = ""
+authors = ["Thomas Roche <thomas.a.roche@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pandas = "^1.2.3"
+seaborn = "^0.11.1"
+ipykernel = "^5.5.3"
+click = "^7.1.2"
+colorama = "^0.4.4"
+Jinja2 = "^2.11.3"
+toml = "^0.10.2"
+xlrd = "^2.0.1"
+openpyxl = "^3.0.7"
+text2digits = "^0.1.0"
+lxml = "^4.6.3"
+python-dateutil = "^2.8.1"
+
+[tool.poetry.dev-dependencies]
+flake8 = "^3.9.0"
+autopep8 = "^1.5.6"
+pytest = "^6.2.3"
+pytest-cov = "^2.11.1"
+pytest-logger = "^0.5.1"
+pytest-mock = "^3.6.0"
+Faker = "^8.1.1"
+parameterized = "^0.8.1"
+darglint = "^1.8.0"
+isort = "^5.8.0"
+seed-isort-config = "^2.2.0"
+xdoctest = "^0.15.4"
+flake8-docstrings = "^1.6.0"
+
+
+[tool.black]
+line-length = 79
+skip-string-normalization = true
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.mypy_cache
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+known_first_party = 'dehumanize'
+known_third_party = ["click", "pytest"]
+multi_line_output = 3
+lines_after_imports = 2
+force_grid_wrap = 0
+combine_as_imports = true
+include_trailing_comma = true
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
